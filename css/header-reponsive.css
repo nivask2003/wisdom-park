@@ -1,0 +1,948 @@
+/* ============================================================
+   HEADER RESPONSIVE CSS — header-responsive.css
+   Covers: Mobile → Tablet → Laptop → Desktop → Large screens
+   Also handles browser zoom levels (below 100% and above 100%)
+   NOTE: Include this AFTER style.css in your HTML:
+   <link rel="stylesheet" href="css/header-responsive.css">
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION 1 — EXTRA SMALL MOBILE (≤ 360px)
+   Very small phones (Galaxy A series, iPhone SE small)
+   ============================================================ */
+@media only screen and (max-width: 360px) {
+    section#main-header {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .logo-url img {
+        width: 150px;
+        padding-top: 5px;
+    }
+
+    #menu-toggle {
+        display: block;
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .total {
+        display: none;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 2 — MOBILE (361px – 480px)
+   Standard smartphones in portrait
+   ============================================================ */
+@media only screen and (min-width: 361px) and (max-width: 480px) {
+    section#main-header {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .logo-url img {
+        width: 170px;
+        padding-top: 6px;
+    }
+
+    #menu-toggle {
+        display: block;
+        font-size: 22px;
+        margin-top: 0;
+    }
+
+    .total {
+        display: none;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 3 — LARGE MOBILE / PHABLET (481px – 575px)
+   Larger phones & phablets
+   ============================================================ */
+@media only screen and (min-width: 481px) and (max-width: 575px) {
+    section#main-header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .logo-url img {
+        width: 180px;
+        padding-top: 6px;
+    }
+
+    #menu-toggle {
+        display: block;
+        font-size: 22px;
+        margin-top: 0;
+    }
+
+    .total {
+        display: none;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 4 — SMALL TABLET / LANDSCAPE PHONE (576px – 767px)
+   Large phones landscape, small tablets
+   ============================================================ */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    section#main-header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .logo-url img {
+        width: 190px;
+        padding-top: 6px;
+    }
+
+    .col-md-2.last {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: block;
+        font-size: 24px;
+        margin-top: 0;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 5 — TABLET PORTRAIT (768px – 991px)
+   iPads and standard tablets
+   ============================================================ */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    section#main-header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .logo-url img {
+        width: 190px;
+        padding-top: 5px;
+    }
+
+    /* Hide call block on smaller tablets */
+    .total {
+        display: none;
+    }
+
+    /* Keep hamburger visible */
+    #menu-toggle {
+        display: block;
+        font-size: 24px;
+        margin-top: 12px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+    }
+
+    /* Slide-out menu (full screen overlay for tablets) */
+    #menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: #003966;
+        transition: 0.4s ease;
+        z-index: 99;
+        padding-top: 60px;
+        margin-top: 0px;
+    }
+
+    #menu.active {
+        right: 0;
+    }
+
+    .main-menu li {
+        display: block;
+        padding: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .main-menu li a {
+        color: #fff;
+        text-align: left;
+    }
+
+    .active .main-menu {
+        margin-top: 70px;
+    }
+
+    /* Show hamburger column */
+    #main-header .col-xs-4.text-right.visible-xs {
+        display: block !important;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 6 — TABLET LANDSCAPE (992px – 1023px)
+   Tablets in landscape mode
+   ============================================================ */
+@media only screen and (min-width: 992px) and (max-width: 1023px) {
+    section#main-header {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .logo-url img {
+        width: 200px;
+        padding-top: 5px;
+    }
+
+    /* Show call block but compact it */
+    .total {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .total h4 {
+        display: none;
+    }
+
+    .total i {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .text p a {
+        font-size: 13px;
+    }
+
+    /* Compact nav */
+    #menu {
+        display: block !important;
+        position: static;
+        background: none;
+        text-align: right;
+        margin-top: 15px;
+    }
+
+    .main-menu li {
+        display: inline-block;
+    }
+
+    .main-menu li a {
+        font-size: 12px;
+        padding: 5px 4px;
+        color: #000;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    #main-header #menu li.dropdown {
+        padding-bottom: 20px;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 7 — SMALL LAPTOP (1024px – 1199px)
+   Small laptops and large tablets in landscape
+   ============================================================ */
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    section#main-header {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .logo-url img {
+        width: 200px;
+        padding-top: 8px;
+    }
+
+    /* Desktop nav — inline */
+    #menu {
+        display: block !important;
+        position: static;
+        background: none;
+        text-align: right;
+        margin-top: 22px;
+    }
+
+    .main-menu li {
+        display: inline-block;
+    }
+
+    .main-menu li a {
+        font-size: 13px;
+        padding: 5px 5px;
+        color: #000;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    /* Call block */
+    .total {
+        display: flex;
+        align-items: center;
+        /* margin-top: 20px; */
+    }
+
+    .total i {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .total h4 {
+        font-size: 12px;
+    }
+
+    .text p a {
+        font-size: 13px;
+    }
+
+    .total .text {
+        margin-top: 18px;
+    }
+
+    #main-header #menu li.dropdown {
+        padding-bottom: 22px;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 8 — MEDIUM LAPTOP (1200px – 1366px)
+   Standard laptops, HD screens at 100% zoom
+   ============================================================ */
+@media only screen and (min-width: 1200px) and (max-width: 1366px) {
+    section#main-header {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .logo-url img {
+        padding-top: 15px;
+    }
+
+    #menu {
+        display: block !important;
+        position: static;
+        background: none;
+        text-align: right;
+        margin-top: 30px;
+    }
+
+    .main-menu li {
+        display: inline-block;
+    }
+
+    .main-menu li a {
+        font-size: 15px;
+        padding: 5px 7px;
+        color: #000;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .total {
+        display: flex;
+        align-items: center;
+        /* margin-top: 25px; */
+    }
+
+    .total i {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .total h4 {
+        font-size: 13px;
+    }
+
+    .text p a {
+        font-size: 15px;
+    }
+
+    .total .text {
+        margin-top: 22px;
+    }
+
+    #main-header #menu li.dropdown {
+        padding-bottom: 30px;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 9 — LARGE LAPTOP / DESKTOP (1367px – 1600px)
+   Full HD monitors, standard desktop at 100% zoom
+   ============================================================ */
+@media only screen and (min-width: 1367px) and (max-width: 1600px) {
+    section#main-header {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .logo-url img {
+        padding-top: 15px;
+    }
+
+    #menu {
+        display: block !important;
+        position: static;
+        background: none;
+        text-align: right;
+        margin-top: 35px;
+    }
+
+    .main-menu li {
+        display: inline-block;
+    }
+
+    .main-menu li a {
+        font-size: 17px;
+        padding: 5px 10px;
+        color: #000;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .total {
+        display: flex;
+        align-items: center;
+        /* margin-top: 30px; */
+    }
+
+    .total i {
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+    }
+
+    .total h4 {
+        font-size: 15px;
+    }
+
+    .text p a {
+        font-size: 17px;
+    }
+
+    .total .text {
+        margin-top: 25px;
+    }
+
+    #main-header #menu li.dropdown {
+        padding-bottom: 34px;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 10 — WIDE DESKTOP (1601px – 1920px)
+   QHD monitors, 1080p at below 100% zoom
+   ============================================================ */
+@media only screen and (min-width: 1601px) and (max-width: 1920px) {
+    section#main-header {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .container {
+        width: 88%;
+        max-width: 1500px;
+    }
+
+    .logo-url img {
+        padding-top: 15px;
+        width: auto;
+        max-width: 100%;
+    }
+
+    #menu {
+        display: block !important;
+        position: static;
+        background: none;
+        text-align: right;
+        margin-top: 35px;
+    }
+
+    .main-menu li {
+        display: inline-block;
+    }
+
+    .main-menu li a {
+        font-size: 16px;
+        padding: 5px 12px;
+        color: #000;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .total {
+        display: flex;
+        align-items: center;
+        /* margin-top: 30px; */
+    }
+
+    .total i {
+        width: 48px;
+        height: 48px;
+        font-size: 26px;
+    }
+
+    .total h4 {
+        font-size: 15px;
+    }
+
+    .text p a {
+        font-size: 18px;
+    }
+
+    .total .text {
+        margin-top: 25px;
+    }
+
+    #main-header #menu li.dropdown {
+        padding-bottom: 34px;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 11 — ULTRA-WIDE / 4K (1921px and above)
+   4K monitors, ultrawide displays, screen at below 75% zoom
+   ============================================================ */
+@media only screen and (min-width: 1921px) {
+    section#main-header {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 1800px;
+    }
+
+    .logo-url img {
+        padding-top: 15px;
+        width: auto;
+        max-width: 100%;
+    }
+
+    #menu {
+        display: block !important;
+        position: static;
+        background: none;
+        text-align: right;
+        margin-top: 38px;
+    }
+
+    .main-menu li {
+        display: inline-block;
+    }
+
+    .main-menu li a {
+        font-size: 17px;
+        padding: 5px 14px;
+        color: #000;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .total {
+        display: flex;
+        align-items: center;
+        /* margin-top: 32px; */
+    }
+
+    .total i {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .total h4 {
+        font-size: 16px;
+    }
+
+    .text p a {
+        font-size: 19px;
+    }
+
+    .total .text {
+        margin-top: 28px;
+    }
+
+    #main-header #menu li.dropdown {
+        padding-bottom: 34px;
+    }
+
+    #header-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/* ============================================================
+   SECTION 12 — BROWSER ZOOM COMPENSATION
+   When users zoom IN (above 100%), the viewport shrinks, so
+   the normal breakpoints above already handle it naturally.
+   These rules fine-tune the header at tight viewport widths
+   caused by zooming (e.g. 125%, 150%, 200% zoom).
+   ============================================================ */
+
+/* 125% zoom on a 1366px laptop → visible width ~1093px */
+@media only screen and (min-width: 1024px) and (max-width: 1120px) {
+    .main-menu li a {
+        font-size: 12.5px;
+        padding: 5px 4px;
+    }
+
+    .total h4 {
+        font-size: 11px;
+    }
+
+    .text p a {
+        font-size: 13px;
+    }
+
+    .logo-url img {
+        width: 185px;
+    }
+}
+
+/* 150% zoom on a 1366px laptop → visible width ~910px */
+@media only screen and (min-width: 860px) and (max-width: 1023px) {
+    section#main-header {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .logo-url img {
+        width: 190px;
+        padding-top: 5px;
+    }
+
+    /* Switch to hamburger menu at heavy zoom */
+    #menu-toggle {
+        display: block;
+        font-size: 24px;
+        margin-top: 12px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: #003966;
+        transition: 0.4s ease;
+        z-index: 99;
+        padding-top: 60px;
+        margin-top: 0;
+    }
+
+    #menu.active {
+        right: 0;
+    }
+
+    .main-menu li {
+        display: block;
+        padding: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .main-menu li a {
+        color: #fff;
+        text-align: left;
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+
+    .active .main-menu {
+        margin-top: 70px;
+    }
+
+    .total {
+        display: none;
+    }
+
+    #main-header .col-xs-4.text-right.visible-xs {
+        display: block !important;
+    }
+}
+
+/* 175–200% zoom (very heavy zoom, header becomes very narrow) */
+@media only screen and (max-width: 860px) and (min-width: 768px) {
+    section#main-header {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .logo-url img {
+        width: 170px;
+        padding-top: 5px;
+    }
+
+    #menu-toggle {
+        display: block;
+        font-size: 22px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: #003966;
+        transition: 0.4s ease;
+        z-index: 99;
+        padding-top: 60px;
+    }
+
+    #menu.active {
+        right: 0;
+    }
+
+    .main-menu li {
+        display: block;
+        padding: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .main-menu li a {
+        color: #fff;
+        text-align: left;
+    }
+
+    .active .main-menu {
+        margin-top: 70px;
+    }
+
+    .total {
+        display: none;
+    }
+
+    #main-header .col-xs-4.text-right.visible-xs {
+        display: block !important;
+    }
+}
+
+
+/* ============================================================
+   SECTION 13 — ZOOM-OUT LARGE VIEWPORT (above 1920px width)
+   When users zoom OUT below 100% on large monitors, the
+   viewport appears wider. The container max-width caps layout,
+   but we ensure the nav and call block stay proportional.
+   ============================================================ */
+@media only screen and (min-width: 2200px) {
+    .container {
+        width: 75%;
+        max-width: 2000px;
+    }
+
+    .main-menu li a {
+        font-size: 18px;
+        padding: 5px 16px;
+    }
+
+    .total i {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+    }
+
+    .total h4 {
+        font-size: 17px;
+    }
+
+    .text p a {
+        font-size: 20px;
+    }
+
+    #menu {
+        margin-top: 40px;
+    }
+}
+
+
+/* ============================================================
+   SECTION 14 — SCROLLED / STICKY HEADER (all screen sizes)
+   Keeps sticky header consistent when page is scrolled
+   ============================================================ */
+.scrolled #main-header {
+    position: fixed;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    z-index: 1001;
+}
+
+/* Make sticky header compact on scroll for laptop and above */
+@media only screen and (min-width: 1024px) {
+    .scrolled section#main-header {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .scrolled .logo-url img {
+        padding-top: 8px;
+    }
+
+    .scrolled #menu {
+        margin-top: 20px;
+    }
+
+    .scrolled .total .text {
+        margin-top: 15px;
+    }
+}
+
+/* Sticky header on tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .scrolled section#main-header {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .scrolled .logo-url img {
+        padding-top: 5px;
+    }
+}
+
+/* ============================================================
+   HAMBURGER DROPDOWN FIX — All mobile & tablet (≤ 1024px)
+   ============================================================ */
+@media only screen and (max-width: 1024px) {
+
+    /* Override global position:absolute with static so it
+       flows inside the fixed menu panel */
+    .submenu {
+        display: none !important;
+        position: static !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        box-shadow: none !important;
+        min-width: 100% !important;
+        padding: 0 !important;
+        z-index: auto !important;
+    }
+
+    /* Show when JS adds .open class */
+    .dropdown.open .submenu {
+        display: block !important;
+    }
+
+    .submenu li {
+        padding: 6px 10px 6px 25px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+        min-width: unset !important;
+    }
+
+    .submenu li a {
+        color: #fff !important;
+        font-size: 14px !important;
+    }
+
+    .submenu li:hover {
+    background: transparent !important;
+
+
+}
+
+    /* Rotate arrow when open */
+    .dropdown.open .arrow i {
+        display: inline-block;
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+}
