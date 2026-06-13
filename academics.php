@@ -1,3 +1,4 @@
+<?php include 'function.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,150 +19,7 @@
 </head>
 
 <body>
-	<div id="header-wrap">
-
-    <section id="main-header">
-        <div class="container">
-            <div class="row header-flex">
-
-                <!-- Logo -->
-                <div class="col-xs-8 col-md-3 logo-col">
-                    <a class="logo-url" href="index.html">
-                        <img src="images/logo.png" class="img-responsive" alt="Logo">
-                    </a>
-                </div>
-
-                <!-- Mobile Toggle -->
-                <div class="col-xs-4 text-right mobile-toggle">
-                    <div id="menu-toggle">
-                        <span id="icon">☰</span>
-                    </div>
-                </div>
-
-                <!-- Menu -->
-                <div class="col-xs-12 col-md-7">
-                    <nav id="menu">
-                        <ul class="main-menu">
-
-                            <li><a href="index.html">Home</a></li>
-
-                            <li><a href="about.html">About</a></li>
-
-                            <li><a href="academics.html">Academics</a></li>
-
-                            <li><a href="facilities.html">Facilities</a></li>
-
-                            <li class="dropdown">
-                                <a href="#" class="toggle-btn">
-                                    Admission
-                                    <span class="arrow">
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                </a>
-
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="admisssion-procedure.html">
-                                            Admission Procedure
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="admisssion-form.html">
-                                            Admission Form
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li><a href="gallery.html">Gallery</a></li>
-
-                            <li><a href="career.html">Career</a></li>
-
-                            <li><a href="contact.html">Contact Us</a></li>
-
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Contact -->
-                <div class="col-md-2 last desktop-call">
-                    <div class="total">
-                        <i class="fa fa-phone"></i>
-
-                        <div class="text">
-                            <h4>Call Anytime:</h4>
-
-                            <p>
-                                <a href="tel:+917639651222">
-                                    +91 763 965 1222
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    var toggleBtn = document.getElementById("menu-toggle");
-    var menu = document.getElementById("menu");
-    var icon = document.getElementById("icon");
-
-    if (!toggleBtn || !menu || !icon) return;
-
-    // Open / close hamburger menu
-    toggleBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        menu.classList.toggle("active");
-        icon.innerHTML = menu.classList.contains("active") ? "✖" : "☰";
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", function (e) {
-        if (menu.classList.contains("active") &&
-            !menu.contains(e.target) &&
-            !toggleBtn.contains(e.target)) {
-            menu.classList.remove("active");
-            icon.innerHTML = "☰";
-            // Also close any open dropdowns
-            document.querySelectorAll(".dropdown.open").forEach(function (d) {
-                d.classList.remove("open");
-            });
-        }
-    });
-
-    // Mobile Dropdown toggle — use class "open" to avoid Bootstrap conflicts
-    document.querySelectorAll(".dropdown .toggle-btn").forEach(function (btn) {
-        btn.addEventListener("click", function (e) {
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                var parentLi = btn.parentElement;
-                var isOpen = parentLi.classList.contains("open");
-
-                // Close all dropdowns
-                document.querySelectorAll(".dropdown.open").forEach(function (d) {
-                    d.classList.remove("open");
-                });
-
-                // Toggle this one
-                if (!isOpen) {
-                    parentLi.classList.add("open");
-                }
-            }
-        });
-    });
-
-});
-</script>
+	<?=template_header()?>
 	<main>
 		<section class="academics-1">
 			<div class="container">
@@ -692,7 +550,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		</section>
 
 	</main>
-	<div id="footer"></div>
+	<?=template_footer()?>
 
 
 
